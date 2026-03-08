@@ -1,6 +1,5 @@
 // Inheritance in OOps
-/* Inheritance means one class use the Properties and methods of an 
-another class without rewriting the code */
+/* Inheritance means one class use the Properties and methods of an another class without rewriting the code */
 
 // In inheritance, the child class can access all parent class features,
 // but the parent class cannot access child class features.
