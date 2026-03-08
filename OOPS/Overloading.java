@@ -10,7 +10,7 @@ class Main {
         System.out.println("Sum: " + (a + b));
     }
 
-    void calculator(int a, int b, int c) {
+    void calculator(float a, float b, float c) {
         System.out.println("Three Var: " + (a + b + c));
     }
 
@@ -24,7 +24,7 @@ public class Overloading {
         mm.calculator();
         mm.calculator(5 , 5);
         // mm.calculator("Dharun");
-        mm.calculator(5 , 5 , 5);
+        mm.calculator(1.5 , 1.5 , 1.0);
 
 
         System.out.println(mm.calculator("Dharun"));
