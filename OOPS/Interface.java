@@ -1,4 +1,5 @@
 // Interface
+/* An interface is a fully abstract type in Java that defines a set of rules (contract) that a class must follow when it implements the interface. */
 interface Payment {
     void pay();
 }
