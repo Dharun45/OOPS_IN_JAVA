@@ -6,7 +6,7 @@ abstract class Attendance {
     abstract void present();
     abstract void absent();
 
-    void College() {
+    void College() { // It will be inherited directly
         System.out.println("How we calculate the Students attendace for END SEM");
     }   
 }
