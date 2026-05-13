@@ -1,33 +1,34 @@
 // Interface
 /* An interface is a fully abstract type in Java that defines a set of rules (contract) that a class must follow when it implements the interface. */
-interface Payment {
-    void pay();
+
+
+interface Playable {
+    void play();
 }
 
-// Implementation 1
-class UPI implements Payment {
-    public void pay() {
-        System.out.println("Paid using UPI");
+interface Recordable {
+    void record();
+}
+
+
+// implements BOTH interfaces
+class SmartPlayer implements Playable, Recordable {
+
+    @Override
+    public void play() {
+        System.out.println("Playing media...");
+    }
+
+    @Override
+    public void record() {
+        System.out.println("Recording started...");
     }
 }
 
-// Implementation 2
-class Card implements Payment {
-    public void pay() {
-        System.out.println("Paid using Card");
-    }
-}
-
-// Main class
-public class Interface {
+public class Main {
     public static void main(String[] args) {
-
-        // Using UPI
-        Payment p1 = new UPI();
-        p1.pay();
-
-        // Using Card
-        Payment p2 = new Card();
-        p2.pay();
+        SmartPlayer sp = new SmartPlayer();
+        sp.play();
+        sp.record();
     }
 }
