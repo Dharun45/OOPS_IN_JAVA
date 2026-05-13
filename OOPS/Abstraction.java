@@ -28,9 +28,8 @@ class SEM1 extends Attendance {
 
 public class Abstraction {
     public static void main(String[] args) {
-        Attendance aa; // Create reference for abst class 
+        Attendance aa = new SEM1(); // Create reference for abst class
 
-        aa = new SEM1(); 
         aa.College();
         aa.present();
         aa.absent();
