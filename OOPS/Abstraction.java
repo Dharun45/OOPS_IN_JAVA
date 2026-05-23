@@ -1,39 +1,38 @@
 /*Abstraction means hiding internal implementaion and showing essential features to user. 
 It is achieved using the abstraction and interface. */
 
-abstract class Attendance {
-    // Create abst method
-    abstract void present();
-    abstract void absent();
+abstract class Animal {
+    // abstract method — no body
+    abstract void sound();
 
-    void College() { // It will be inherited directly
-        System.out.println("How we calculate the Students attendace for END SEM");
-    }   
-}
-
-// Child class giving actual implementation
-class SEM1 extends Attendance {
-
-    @Override
-    void present() {
-        System.out.println("Every student must have above 75% attendance");
-    }
-
-    @Override
-    void absent() {
-        System.out.println("If anyother student have < 75% attendance they will pay fine for that, then only allowed to Exam");
+    // normal method — has body
+    void breathe() {
+        System.out.println("All animals breathe");
     }
 }
 
+class Dog extends Animal {
+    // MUST implement sound()
+    void sound() {
+        System.out.println("Dog says: Woof!");
+    }
+}
 
-public class Abstraction {
+class Cat extends Animal {
+    // MUST implement sound()
+    void sound() {
+        System.out.println("Cat says: Meow!");
+    }
+}
+
+public class Main {
     public static void main(String[] args) {
-        Attendance aa = new SEM1(); // Create reference for abst class
+        Dog d = new Dog();
+        d.sound();      // → Dog says: Woof!
+        d.breathe();    // → All animals breathe
 
-        aa.College();
-        aa.present();
-        aa.absent();
-        
+        Cat c = new Cat();
+        c.sound();      // → Cat says: Meow!
+        c.breathe();    // → All animals breathe
     }
 }
-
