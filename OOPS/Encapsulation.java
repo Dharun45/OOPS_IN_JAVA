@@ -7,55 +7,42 @@ Protects data from unintended modification
 Gives you control over what gets in and out
 Makes the code maintainable and secure */
 
-class BankAccount {
-    private String accountHolder;
-    private double balance;        // Cannot be accessed directly from outside
-    private String accountNumber;
+class EncapTest {
+   private String name;
+   private String idNum;
+   private int age;
 
-    // Constructor
-    public BankAccount(String accountHolder, String accountNumber, double initialBalance) {
-        this.accountHolder = accountHolder;
-        this.accountNumber = accountNumber;
-        this.balance = initialBalance;
-    }
+   public int getAge() {
+      return age;
+   }
 
-    // Getter - controlled read access
-    public double getBalance() {
-        return balance;
-    }
+   public String getName() {
+      return name;
+   }
 
-    public String getAccountHolder() {
-        return accountHolder;
-    }
+   public String getIdNum() {
+      return idNum;
+   }
 
-    // No direct setter for balance — only controlled operations allowed
-    public void deposit(double amount) {
-        if (amount > 0) {
-            balance += amount;
-            System.out.println("Deposited ₹" + amount + ". New balance: ₹" + balance);
-        } else {
-            System.out.println("Invalid deposit amount.");
-        }
-    }
+   public void setAge( int newAge) {
+      age = newAge;
+   }
 
-    public void withdraw(double amount) {
-        if (amount > 0 && amount <= balance) {
-            balance -= amount;
-            System.out.println("Withdrawn ₹" + amount + ". Remaining balance: ₹" + balance);
-        } else {
-            System.out.println("Insufficient funds or invalid amount.");
-        }
-    }
+   public void setName(String newName) {
+      name = newName;
+   }
+   public void setIdNum( String newId) {
+      idNum = newId;
+   }
 }
 
-public class Main {
-    public static void main(String[] args) {
-        BankAccount acc = new BankAccount("Ravi", "ACC1001", 5000);
+public class RunEncap {
+   public static void main(String args[]) {
+      EncapTest encap = new EncapTest();
+      encap.setName("James");
+      encap.setAge(20);
+      encap.setIdNum("12343ms");
 
-        // acc.balance = 100000;  // ERROR! balance is private — encapsulation protects it
-
-        acc.deposit(2000);
-        acc.withdraw(1000);
-        System.out.println("Balance: ₹" + acc.getBalance());
-    }
+      System.out.print("Name : " + encap.getName() + " Age : " + encap.getAge());
+   }
 }
